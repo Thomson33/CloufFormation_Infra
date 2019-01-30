@@ -3,8 +3,8 @@ import requests
 
 """ Download and install WORDPRESS. """
 
-os.system("sudo wget https://wordpress.org/latest.tar.gz -P /var/www)
-os.system("sudo tar zxvf /var/www/latest.tar.gz -C /var/www)
+os.system("wget https://wordpress.org/latest.tar.gz -P /var/www")
+os.system("tar zxvf /var/www/latest.tar.gz -C /var/www")
 
 secret_key = 'https://api.wordpress.org/secret-key/1.1/salt/'
 r = requests.post(secret_key)
