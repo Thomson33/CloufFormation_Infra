@@ -1,7 +1,16 @@
 import os
 import requests
+import argparse
+
+def parse_arguments():
+	parser = argparse.ArgumentParser()
+	parser.add_argument("-u", "--user", help="""DB User""")	
+	
+	return parser.parse_args()
 
 """ Download and install WORDPRESS. """
+
+ARGS = parse_arguments()
 
 os.system("wget https://wordpress.org/latest.tar.gz -P /var/www")
 os.system("tar zxvf /var/www/latest.tar.gz -C /var/www")
@@ -18,7 +27,7 @@ line = 'not_empty'
 
 while line:
 	line = wp_non_conf.readline()
-	wp_conf.write(line.format(db_name='zz',db_user='ss',db_mdp='zz',key_secret=r.text))
+	wp_conf.write(line.format(db_name='dsd',db_user=ARGS.user,db_mdp='zz',key_secret=r.text))
 
 wp_conf.close()
 
