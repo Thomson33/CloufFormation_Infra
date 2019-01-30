@@ -11,7 +11,7 @@ r = requests.post(secret_key)
 
 os.system("touch /var/www/wp-config.php")
 
-wp_non_conf = open('Ressources/wp-config.txt', 'r')
+wp_non_conf = open('wp-config.txt', 'r')
 wp_conf = open('/var/www/wp-config.php', 'w')
 
 line = 'not_empty'
