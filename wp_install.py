@@ -9,10 +9,10 @@ os.system("tar zxvf /var/www/latest.tar.gz -C /var/www")
 secret_key = 'https://api.wordpress.org/secret-key/1.1/salt/'
 r = requests.post(secret_key)
 
-os.system("touch /var/www/wp-config.php")
+os.system("touch /var/www/wordpress/wp-config.php")
 
 wp_non_conf = open('wp-config.txt', 'r')
-wp_conf = open('/var/www/wp-config.php', 'w')
+wp_conf = open('/var/www/wordpress/wp-config.php', 'w')
 
 line = 'not_empty'
 
