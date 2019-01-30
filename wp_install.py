@@ -4,11 +4,10 @@ import argparse
 
 def parse_arguments():
 	parser = argparse.ArgumentParser()
-	parser.add_argument("-u", "--user", help="""DB User""")	
-	parser.add_argument("-h", "--host", help="""DB Host""")	
-	parser.add_argument("-p", "--pass", help="""DB Pass""")	
-	parser.add_argument("-n", "--name", help="""DB Name""")	
-	
+	parser.add_argument("-u", "--user", help="""DB User""")
+	parser.add_argument("-l", "--host", help="""DB Host""")
+	parser.add_argument("-p", "--password", help="""DB Pass""")
+	parser.add_argument("-n", "--name", help="""DB Name""")
 	return parser.parse_args()
 
 """ Download and install WORDPRESS. """
@@ -30,7 +29,7 @@ line = 'not_empty'
 
 while line:
 	line = wp_non_conf.readline()
-	wp_conf.write(line.format(db_host=ARGS.host,db_name=ARGS.name,db_user=ARGS.user,db_mdp=ARGS.pass,key_secret=r.text))
+	wp_conf.write(line.format(db_host=ARGS.host, db_name=ARGS.name, db_user=ARGS.user, db_mdp=ARGS.password, key_secret=r.text))
 
 wp_conf.close()
 
