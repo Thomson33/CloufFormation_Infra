@@ -8,6 +8,8 @@ def parse_arguments():
 	parser.add_argument("-l", "--host", help="""DB Host""")
 	parser.add_argument("-p", "--password", help="""DB Pass""")
 	parser.add_argument("-n", "--name", help="""DB Name""")
+	parser.add_argument("-a", "--access", help="""S3 Access Key""")
+	parser.add_argument("-s", "--secret", help="""S3 Secret Key""")
 	return parser.parse_args()
 
 """ Download and install WORDPRESS. """
@@ -29,7 +31,7 @@ line = 'not_empty'
 
 while line:
 	line = wp_non_conf.readline()
-	wp_conf.write(line.format(db_host=ARGS.host, db_name=ARGS.name, db_user=ARGS.user, db_mdp=ARGS.password, key_secret=r.text))
+	wp_conf.write(line.format(db_host=ARGS.host, db_name=ARGS.name, db_user=ARGS.user, db_mdp=ARGS.password, s3_access=ARGS.access, s3_secret=ARGS.secret, key_secret=r.text))
 
 wp_conf.close()
 
