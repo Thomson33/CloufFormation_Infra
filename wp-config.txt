@@ -83,5 +83,5 @@ if ( !defined('ABSPATH') )
 /** Réglage des variables de WordPress et de ses fichiers inclus. */
 require_once(ABSPATH . 'wp-settings.php');
 
-define( 'DBI_AWS_ACCESS_KEY_ID', '{s3_access}' );
-define( 'DBI_AWS_SECRET_ACCESS_KEY', '{s3_secret}'$
+define('DBI_AWS_ACCESS_KEY_ID', '{s3_access}');
+define('DBI_AWS_SECRET_ACCESS_KEY', '{s3_secret}');
